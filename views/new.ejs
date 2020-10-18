@@ -1,0 +1,31 @@
+<%- include("partials/header") -%>
+
+<h1>Create a new signature</h1>
+
+    <form class="signature-form" action="/generate" method="POST">
+        <h2>Staff Details</h2>
+        <div class="form-group">
+            <label for="fName">First Name:</label>
+            <input type="text" class="form-control" name="fName" placeholder="First Name" required>
+        </div>
+        <div class="form-group">
+            <label for="lName">Last Name:</label>
+            <input type="text" class="form-control" name="lName" placeholder="Last Name" required>
+        </div>
+        <div class="form-group">
+            <label for="title">Job Title:</label>
+            <input type="text" class="form-control" name="title" placeholder="Job Title" required>
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile:</label>
+            <input type="text" class="form-control" name="mobile" placeholder="Mobile">
+        </div>
+        <div class="form-group">
+            <label for="imageId">Image ID:</label>
+            <input type="text" class="form-control" name="imageId" placeholder="Image ID">
+            <small class="form-text text-muted">Your Image ID can be found in the URL of your Google Docs 'share link'. Look for the ?id= paramater in the link.</small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm btn-block">Generate Signature</button>
+    </form>
+
+<%- include("partials/footer") -%>
