@@ -38,7 +38,13 @@ app.post("/generate", function(req, res) {
   let mobile = req.body.mobile;
   let mNumber = "";
   let imageId = req.body.imageId;
+  let defaultImageId = "";
   let image = "";
+  let brand = req.body.brandSelect;
+  let colour = "";
+  let landline = "";
+  let domain = "";
+  let edomain = "";
   
   let name = fName + " " + lName;
 
@@ -48,13 +54,49 @@ app.post("/generate", function(req, res) {
     mNumber = " | M: " + mobile;
   }
 
+  //landline, domain, colour
+  switch (brand) {
+    case "ClinicalPRO":
+      colour = "#0D5CAB";
+      landline = "1800 628 999";
+      domain = "@clinicalpro.com.au";
+      edomain = domain;
+      defaultImageId = "17Dm-5k6B2VWUnpXEKbeyTctADihiHRhh";
+      break;
+
+    case "Clinical Skincare":
+      colour = "#F7941E";
+      landline = "1800 628 999";
+      domain = "@clinicalskincare.com.au";
+      edomain = "@clinicalpro.com.au";
+      defaultImageId = "1ainxJzUnt5wnl1IQxopDo669vZuxRENR";
+      break;
+    
+      case "Clinical Therapies Laser Institute":
+        colour = "#1B5BA7";
+        landline = "1800 628 999";
+        domain = "@laserinstitute.com.au";
+        edomain = domain;
+        defaultImageId = "1Euyl0VU2XkeUYhNsX2AdOzBQpoKhidqm";
+        break;
+      
+      case "Beauty-Thru-Nature":
+        colour = "#6D5180";
+        landline = "(07) 3356 173";
+        domain = "@beautythrunature.com.au";
+        edomain = domain;
+        email = "ask";
+        defaultImageId = "1vzFulJwvpSH_VdSDqMha6V6d3DodRM5K";
+        break;
+  }
+
   if (imageId === "") {
-    image = "https://drive.google.com/uc?export=view&id=" + "17Dm-5k6B2VWUnpXEKbeyTctADihiHRhh";
+    image = "https://drive.google.com/uc?export=view&id=" + defaultImageId;
   } else {
     image = "https://drive.google.com/uc?export=view&id=" + imageId;
   }
 
-  res.render("generate", {name: name, title: title, email: email, mNumber: mNumber, image: image});
+  res.render("generate", {name: name, title: title, email: email, edomain: edomain, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain});
 })
 
 app.listen(3000, function() {
