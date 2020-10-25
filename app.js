@@ -96,7 +96,18 @@ app.post("/generate", function(req, res) {
     image = "https://drive.google.com/uc?export=view&id=" + imageId;
   }
 
-  res.render("generate", {name: name, title: title, email: email, edomain: edomain, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain});
+  function escapeHtml(unsafe) {
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+ }
+
+ let sigHtml = escapeHtml("<h1>Test</h1>");
+
+  res.render("generate", {sigHtml: sigHtml, name: name, title: title, email: email, edomain: edomain, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain});
 })
 
 app.listen(3000, function() {
