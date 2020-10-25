@@ -15,19 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", function(req, res) {
-  res.render("home");
-});
-
-app.get("/instructions", function(req, res) {
-  res.render("instructions");
-});
-
-app.get("/new", function(req, res) {
   res.render("new");
-});
-
-app.get("/signature", function(req, res) {
-  res.render("signature");
 });
 
 app.post("/generate", function(req, res) {
@@ -59,15 +47,15 @@ app.post("/generate", function(req, res) {
     case "ClinicalPRO":
       colour = "#0D5CAB";
       landline = "1800 628 999";
-      domain = "@clinicalpro.com.au";
-      edomain = domain;
+      domain = "clinicalpro.com.au";
+      edomain = "@" + domain;
       defaultImageId = "17Dm-5k6B2VWUnpXEKbeyTctADihiHRhh";
       break;
 
     case "Clinical Skincare":
       colour = "#F7941E";
       landline = "1800 628 999";
-      domain = "@clinicalskincare.com.au";
+      domain = "clinicalskincare.com.au";
       edomain = "@clinicalpro.com.au";
       defaultImageId = "1ainxJzUnt5wnl1IQxopDo669vZuxRENR";
       break;
@@ -75,16 +63,16 @@ app.post("/generate", function(req, res) {
       case "Clinical Therapies Laser Institute":
         colour = "#1B5BA7";
         landline = "1800 628 999";
-        domain = "@laserinstitute.com.au";
-        edomain = domain;
+        domain = "laserinstitute.com.au";
+        edomain = "@" + domain;
         defaultImageId = "1Euyl0VU2XkeUYhNsX2AdOzBQpoKhidqm";
         break;
       
       case "Beauty-Thru-Nature":
         colour = "#6D5180";
         landline = "(07) 3356 173";
-        domain = "@beautythrunature.com.au";
-        edomain = domain;
+        domain = "beautythrunature.com.au";
+        edomain = "@" + domain;
         email = "ask";
         defaultImageId = "1vzFulJwvpSH_VdSDqMha6V6d3DodRM5K";
         break;
@@ -105,9 +93,7 @@ app.post("/generate", function(req, res) {
          .replace(/'/g, "&#039;");
  }
 
- let sigHtml = escapeHtml("<h1>Test</h1>");
-
-  res.render("generate", {sigHtml: sigHtml, name: name, title: title, email: email, edomain: edomain, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain});
+  res.render("generate", {name: name, title: title, email: email, edomain: edomain, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain});
 })
 
 app.listen(3000, function() {
