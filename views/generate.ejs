@@ -1,5 +1,16 @@
 <%- include("partials/header") -%>
 
-<%- include("partials/signature") -%>
+<div class="cus-container">
+    <div class="cus-sig-container">
+        <%- include("partials/signature") -%>
+    </div>
+    <button id="btn" class="copy-btn btn btn-primary btn-block cus-btn" data-clipboard-target="#copy">Copy</button>
+    
+        <%- include("partials/textarea") -%>
+        <%- include("partials/signature") -%>
+        <%- include("partials/button") -%>
+</div>
+    
+
 
 <%- include("partials/footer") -%>
