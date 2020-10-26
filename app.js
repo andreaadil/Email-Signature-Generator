@@ -96,7 +96,7 @@ app.post("/generate", function(req, res) {
   res.render("generate", {name: name, title: title, email: email, edomain: edomain, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain});
 })
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
 
