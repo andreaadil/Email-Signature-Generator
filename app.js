@@ -37,6 +37,10 @@ app.post("/generate", function(req, res) {
   let feature2 = "";
   let url1 = "";
   let url2 = "";
+  let facebookURL = "";
+  let instagramURL = "";
+  let linkedInURL = "";
+  let mapsURL = "";
   
   let name = fName + " " + lName;
 
@@ -57,6 +61,10 @@ app.post("/generate", function(req, res) {
       feat2 = "19fJt5mr51L30TmvgbrW3K5S0kLhgdD2H";
       url1 = "cp1";
       url2 = "cp2";
+      facebookURL = "https://www.facebook.com/clinicalpro.com.au/";
+      instagramURL = "https://www.instagram.com/clinicalpro.com.au/";
+      linkedInURL = "https://www.linkedin.com/company/clinicalpro";
+      mapsURL = "https://www.clinicalpro.com.au/contact-us/";
       break;
 
     case "Clinical Skincare":
@@ -68,6 +76,10 @@ app.post("/generate", function(req, res) {
       feat2 = "1QgSb_4rNz_9S1shYdbc1S8LEZVKMoNuV";
       url1 = "cs1";
       url2 = "cs2";
+      facebookURL = "https://www.facebook.com/clinicalskincare.com.au";
+      instagramURL = "https://www.instagram.com/clinicalskincare.au/";
+      linkedInURL = "https://www.linkedin.com/company/clinicalpro";
+      mapsURL = "https://www.clinicalskincare.com.au/contact-us/";
       break;
     
       case "Clinical Therapies Laser Institute":
@@ -79,14 +91,20 @@ app.post("/generate", function(req, res) {
         feat2 = "1bqUZ_UgdrgTIxH-frkbwTXbWETx1bhID";
         url1 = "ctli1";
         url2 = "ctli2";
+        facebookURL = "https://www.facebook.com/ctlaserinstitute";
+        instagramURL = "https://www.instagram.com/clinicalpro.com.au/";
+        linkedInURL = "https://www.linkedin.com/company/clinicalpro";
+        mapsURL = "https://www.laserinstitute.edu.au/contact-us/";
         break;
       
       case "Beauty-Thru-Nature":
         colour = "#6D5180";
         landline = "(07) 3356 173";
         domain = "beautythrunature.com.au";
-        email = "ask";
         defaultImageId = "1vzFulJwvpSH_VdSDqMha6V6d3DodRM5K";
+        facebookURL = "https://www.facebook.com/beautythrunature.alderley.qld";
+        instagramURL = "https://www.instagram.com/btnalderley/";
+        mapsURL = "https://www.beautythrunature.com.au/contact/";
         break;
   }
 
@@ -113,7 +131,7 @@ app.post("/generate", function(req, res) {
          .replace(/'/g, "&#039;");
  }
 
-  res.render("generate", {name: name, title: title, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain, feature1: feature1, feature2: feature2, url1: url1, url2: url2});
+  res.render("generate", {name: name, title: title, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain, feature1: feature1, feature2: feature2, url1: url1, url2: url2, facebookURL: facebookURL, instagramURL: instagramURL, linkedInURL: linkedInURL, mapsURL: mapsURL});
 })
 
 app.listen(process.env.PORT || 3000, function() {
