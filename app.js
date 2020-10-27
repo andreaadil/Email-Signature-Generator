@@ -33,8 +33,18 @@ app.post("/generate", function(req, res) {
   let landline = "";
   let domain = "";
   let edomain = "";
+  let feat1 = "";
+  let feat2 = "";
   
   let name = fName + " " + lName;
+  
+  if (brand === "Beauty-Thru-Nature") {
+    let feature1 = "";
+    let feature2 = "";
+  } else {
+    let feature1 = "https://drive.google.com/uc?export=view&id=" + feat1;
+    let feature2 = "https://drive.google.com/uc?export=view&id=" + feat2;
+  }
 
   if (mobile === "") { 
     mobile = "";
@@ -50,6 +60,8 @@ app.post("/generate", function(req, res) {
       domain = "clinicalpro.com.au";
       edomain = "@" + domain;
       defaultImageId = "17Dm-5k6B2VWUnpXEKbeyTctADihiHRhh";
+      feat1 = "1SdBRM2aWy3sdMFn7acy-5syyT_L8ay8x";
+      feat2 = "19fJt5mr51L30TmvgbrW3K5S0kLhgdD2H";
       break;
 
     case "Clinical Skincare":
@@ -58,6 +70,8 @@ app.post("/generate", function(req, res) {
       domain = "clinicalskincare.com.au";
       edomain = "@clinicalpro.com.au";
       defaultImageId = "1ainxJzUnt5wnl1IQxopDo669vZuxRENR";
+      feat1 = "1Kz0F86d2vM3uWSwTVauuklQW1WstTg3c";
+      feat2 = "1QgSb_4rNz_9S1shYdbc1S8LEZVKMoNuV";
       break;
     
       case "Clinical Therapies Laser Institute":
@@ -66,6 +80,8 @@ app.post("/generate", function(req, res) {
         domain = "laserinstitute.com.au";
         edomain = "@" + domain;
         defaultImageId = "1Euyl0VU2XkeUYhNsX2AdOzBQpoKhidqm";
+        feat1 = "1N55MXnrNCFnhr2EQAFK2BLSxdk-gX8Ca";
+        feat2 = "1bqUZ_UgdrgTIxH-frkbwTXbWETx1bhID";
         break;
       
       case "Beauty-Thru-Nature":
@@ -93,7 +109,7 @@ app.post("/generate", function(req, res) {
          .replace(/'/g, "&#039;");
  }
 
-  res.render("generate", {name: name, title: title, email: email, edomain: edomain, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain});
+  res.render("generate", {name: name, title: title, email: email, edomain: edomain, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain, feature1: feature1, feature2: feature2});
 })
 
 app.listen(process.env.PORT || 3000, function() {
