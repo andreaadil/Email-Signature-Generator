@@ -41,6 +41,7 @@ app.post("/generate", function(req, res) {
   let instagramURL = "";
   let linkedInURL = "";
   let mapsURL = "";
+  let linkedIn = "";
   
   let name = fName + " " + lName;
 
@@ -117,9 +118,11 @@ app.post("/generate", function(req, res) {
   if (brand === "Beauty-Thru-Nature") {
     feature1 = "";
     feature2 = "";
+    linkedIn = "";
   } else {
     feature1 = "https://drive.google.com/uc?export=view&id=" + feat1;
     feature2 = "https://drive.google.com/uc?export=view&id=" + feat2;
+    linkedIn = '<a href="<%= linkedInURL %>"><img style="height:18px; margin: 10px 10px 5px 0;" src="https://drive.google.com/uc?export=view&id=1TqHXX5sNMbgZesZ5uJXUAIlzC2Wq4G_2"></a>';
   }
 
   function escapeHtml(unsafe) {
@@ -131,7 +134,7 @@ app.post("/generate", function(req, res) {
          .replace(/'/g, "&#039;");
  }
 
-  res.render("generate", {name: name, title: title, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain, feature1: feature1, feature2: feature2, url1: url1, url2: url2, facebookURL: facebookURL, instagramURL: instagramURL, linkedInURL: linkedInURL, mapsURL: mapsURL});
+  res.render("generate", {name: name, title: title, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain, feature1: feature1, feature2: feature2, url1: url1, url2: url2, facebookURL: facebookURL, instagramURL: instagramURL, linkedInURL: linkedInURL, mapsURL: mapsURL, linkedIn: linkedIn});
 })
 
 app.listen(process.env.PORT || 3000, function() {
