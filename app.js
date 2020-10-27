@@ -37,6 +37,8 @@ app.post("/generate", function(req, res) {
   let feat2 = "";
   let feature1 = "";
   let feature2 = "";
+  let url1 = "";
+  let url2 = "";
   
   let name = fName + " " + lName;
 
@@ -56,6 +58,8 @@ app.post("/generate", function(req, res) {
       defaultImageId = "17Dm-5k6B2VWUnpXEKbeyTctADihiHRhh";
       feat1 = "1SdBRM2aWy3sdMFn7acy-5syyT_L8ay8x";
       feat2 = "19fJt5mr51L30TmvgbrW3K5S0kLhgdD2H";
+      url1 = "cp1";
+      url2 = "cp2";
       break;
 
     case "Clinical Skincare":
@@ -66,6 +70,8 @@ app.post("/generate", function(req, res) {
       defaultImageId = "1ainxJzUnt5wnl1IQxopDo669vZuxRENR";
       feat1 = "1Kz0F86d2vM3uWSwTVauuklQW1WstTg3c";
       feat2 = "1QgSb_4rNz_9S1shYdbc1S8LEZVKMoNuV";
+      url1 = "cs1";
+      url2 = "cs2";
       break;
     
       case "Clinical Therapies Laser Institute":
@@ -76,6 +82,8 @@ app.post("/generate", function(req, res) {
         defaultImageId = "1Euyl0VU2XkeUYhNsX2AdOzBQpoKhidqm";
         feat1 = "1N55MXnrNCFnhr2EQAFK2BLSxdk-gX8Ca";
         feat2 = "1bqUZ_UgdrgTIxH-frkbwTXbWETx1bhID";
+        url1 = "ctli1";
+        url2 = "ctli2";
         break;
       
       case "Beauty-Thru-Nature":
