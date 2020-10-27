@@ -122,7 +122,7 @@ app.post("/generate", function(req, res) {
   } else {
     feature1 = "https://drive.google.com/uc?export=view&id=" + feat1;
     feature2 = "https://drive.google.com/uc?export=view&id=" + feat2;
-    linkedIn = "<a href='" + linkedInURL + "'><img style='height:18px; margin: 10px 10px 5px 0;' src='https://drive.google.com/uc?export=view&id=1TqHXX5sNMbgZesZ5uJXUAIlzC2Wq4G_2'></a>";
+    linkedIn = <a href='" + linkedInURL + "'><img style='height:18px; margin: 10px 10px 5px 0;' src='https://drive.google.com/uc?export=view&id=1TqHXX5sNMbgZesZ5uJXUAIlzC2Wq4G_2'></a>;
   }
 
   function escapeHtml(unsafe) {
