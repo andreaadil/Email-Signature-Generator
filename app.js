@@ -119,7 +119,7 @@ app.post("/generate", function(req, res) {
          .replace(/'/g, "&#039;");
  }
 
-  res.render("generate", {name: name, title: title, email: email, edomain: edomain, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain, feature1: feature1, feature2: feature2});
+  res.render("generate", {name: name, title: title, email: email, edomain: edomain, mNumber: mNumber, image: image, colour: colour, landline: landline, domain: domain, feature1: feature1, feature2: feature2, url1: url1, url2: url2});
 })
 
 app.listen(process.env.PORT || 3000, function() {
