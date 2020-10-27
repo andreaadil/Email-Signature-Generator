@@ -35,16 +35,10 @@ app.post("/generate", function(req, res) {
   let edomain = "";
   let feat1 = "";
   let feat2 = "";
+  let feature1 = "";
+  let feature2 = "";
   
   let name = fName + " " + lName;
-  
-  if (brand === "Beauty-Thru-Nature") {
-    let feature1 = "";
-    let feature2 = "";
-  } else {
-    let feature1 = "https://drive.google.com/uc?export=view&id=" + feat1;
-    let feature2 = "https://drive.google.com/uc?export=view&id=" + feat2;
-  }
 
   if (mobile === "") { 
     mobile = "";
@@ -99,6 +93,14 @@ app.post("/generate", function(req, res) {
   } else {
     image = "https://drive.google.com/uc?export=view&id=" + imageId;
   }
+  
+  if (brand === "Beauty-Thru-Nature") {
+    feature1 = "";
+    feature2 = "";
+  } else {
+    feature1 = "https://drive.google.com/uc?export=view&id=" + feat1;
+    feature2 = "https://drive.google.com/uc?export=view&id=" + feat2;
+  }
 
   function escapeHtml(unsafe) {
     return unsafe
@@ -115,9 +117,3 @@ app.post("/generate", function(req, res) {
 app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
-
-
-
-
-
-// image id = 1rYtr-D7Ieb1YdaAni2rgo72tEY-VFLoD
