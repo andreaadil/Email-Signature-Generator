@@ -122,7 +122,7 @@ app.post("/generate", function(req, res) {
   } else {
     feature1 = "https://drive.google.com/uc?export=view&id=" + feat1;
     feature2 = "https://drive.google.com/uc?export=view&id=" + feat2;
-    linkedIn = "<%- include("linkedIn") -%>";
+    linkedIn = "<%- include('linkedIn') -%>";
   }
 
   function escapeHtml(unsafe) {
